@@ -1,0 +1,33 @@
+<html>
+<body>
+
+<form action="rgb.php" method="post">
+Redi: &nbsp&nbsp&nbsp&nbsp<input type="range" min="0" max="255" value="0" step="1" name="red" onchange="showValuer(this.value)" />
+&nbsp<span id="ranger">0</span>
+<script type="text/javascript">
+function showValuer(newValue)
+{
+	document.getElementById("ranger").innerHTML=newValue;
+}
+</script><br>
+Green: &nbsp<input type="range" min="0" max="255" value="0" step="1" name="green" onchange="showValueg(this.value)" /> 
+&nbsp<span id="rangeg">0</span>
+<script type="text/javascript">
+function showValueg(newValue)
+{
+        document.getElementById("rangeg").innerHTML=newValue;
+}
+</script><br>
+Blue: &nbsp&nbsp&nbsp&nbsp<input type="range" min="0" max="255" value="0" step="1" name="blue" onchange="showValueb(this.value)" />
+&nbsp<span id="rangeb">0</span>
+<script type="text/javascript">
+function showValueb(newValue)
+{
+        document.getElementById("rangeb").innerHTML=newValue;
+}
+</script><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
