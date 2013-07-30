@@ -1,32 +1,44 @@
+<!doctype html>
 <html>
+<head>
+	<meta charset="utf-8" />
+	<title>LEDperInternet</title>
+	<style>
+		*{
+			font-family:sans-serif;
+			color:black;
+		}
+		body{
+			width:70%;
+			margin:100px auto;
+		}
+		table, td{
+			border:0px solid lightgray;
+		}
+	</style>
+	<script type="text/javascript">
+		function showValue(newValue, id)
+		{
+			document.getElementById(id).innerHTML=newValue;
+		}
+	</script>
 <body>
-
-<form action="rgb.php" method="post">
-Redi: &nbsp&nbsp&nbsp&nbsp<input type="range" min="0" max="255" value="0" step="1" name="red" onchange="showValuer(this.value)" />
-&nbsp<span id="ranger">0</span>
-<script type="text/javascript">
-function showValuer(newValue)
-{
-	document.getElementById("ranger").innerHTML=newValue;
-}
-</script><br>
-Green: &nbsp<input type="range" min="0" max="255" value="0" step="1" name="green" onchange="showValueg(this.value)" /> 
-&nbsp<span id="rangeg">0</span>
-<script type="text/javascript">
-function showValueg(newValue)
-{
-        document.getElementById("rangeg").innerHTML=newValue;
-}
-</script><br>
-Blue: &nbsp&nbsp&nbsp&nbsp<input type="range" min="0" max="255" value="0" step="1" name="blue" onchange="showValueb(this.value)" />
-&nbsp<span id="rangeb">0</span>
-<script type="text/javascript">
-function showValueb(newValue)
-{
-        document.getElementById("rangeb").innerHTML=newValue;
-}
-</script><br>
-<input type="submit">
+	<a href="https://github.com/sodaflo/LEDperInternet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="./forkme.png" alt="Fork me!" /></a>
+	<h1>LED einstellen</h1>
+	<form action="rgb.php" method="get">
+		<table>
+			<tr>
+				<td>Red:</td><td><input type="range" min="0" max="255" value="0" step="1" name="red" onchange="showValue(this.value, 'ranger')" /></td><td id="ranger">0</td>
+			</tr>
+			
+			
+			<tr>	
+				<td>Green:</td><td><input type="range" min="0" max="255" value="0" step="1" name="green" onchange="showValue(this.value, 'rangeg')" /></td><td id="rangeg">0</td>
+			</tr>
+			<tr>
+				<td>Blue:</td><td><input type="range" min="0" max="255" value="0" step="1" name="blue" onchange="showValue(this.value, 'rangeb')" /></td><td id="rangeb">0</td>
+		</table>
+		<input value="einstellen" type="submit">
 </form>
 
 </body>
